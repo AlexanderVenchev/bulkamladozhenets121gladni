@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex & Ralie's Wedding</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #1a2e1a; /* Dark green */
+      color: #f5f5dc; /* Cream */
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: #f5f5dc;
+    }
+
+    a {
+      color: #d4af37; /* Gold for links */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .section {
+      margin: 40px 0;
+    }
+
+    .venue-gallery {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .venue-gallery img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #d4af37;
+    }
+
+    .rsvp-button {
+      display: inline-block;
+      background-color: #d4af37;
+      color: #1a2e1a;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .rsvp-button:hover {
+      background-color: #f5f5dc;
+      color: #1a2e1a;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #0f1a0f; /* Darker green */
+      color: #f5f5dc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="section">
+      <h1>Alex & Ralie</h1>
+      <h2>We're Getting Married!</h2>
+      <p>Join us on <strong>August 31, 2025</strong> as we celebrate our love.</p>
+    </header>
+
+    <!-- Venue Gallery Section -->
+    <div class="section">
+      <h2>Our Venue</h2>
+      <div class="venue-gallery">
+        <img src="venue1.jpg" alt="Venue Image 1">
+        <img src="venue2.jpg" alt="Venue Image 2">
+        <img src="venue3.jpg" alt="Venue Image 3">
+      </div>
+    </div>
+
+    <!-- Extra Information Section -->
+    <div class="section">
+      <h2>Details</h2>
+      <p>We can't wait to celebrate with you! Here are a few things to know:</p>
+      <ul style="list-style: none; padding: 0;">
+        <li>📍 Location: [Insert Venue Name & Address]</li>
+        <li>🕒 Time: [Insert Time]</li>
+        <li>👗 Dress Code: [Insert Dress Code]</li>
+      </ul>
+    </div>
+
+    <!-- RSVP Section -->
+    <div class="section">
+      <h2>RSVP</h2>
+      <p>Please let us know if you can attend by filling out the form below.</p>
+      <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" class="rsvp-button">Fill in Invite</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with love by Alex & Ralie</p>
+  </footer>
+</body>
+</html>
