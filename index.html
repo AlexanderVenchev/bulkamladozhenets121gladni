@@ -24,7 +24,6 @@
       color: #d4af37; /* Gold for links */
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
@@ -39,22 +38,23 @@
       margin: 40px 0;
     }
 
+    /* Venue Gallery */
     .venue-gallery {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 10px;
     }
-
     .venue-gallery img {
       width: 100%;
       max-width: 300px;
       height: auto;
       border-radius: 10px;
       border: 2px solid #d4af37;
-      object-fit: cover; /* Ensures images maintain aspect ratio */
+      object-fit: cover;
     }
 
+    /* RSVP button */
     .rsvp-button {
       display: inline-block;
       background-color: #d4af37;
@@ -64,12 +64,12 @@
       border-radius: 5px;
       margin-top: 20px;
     }
-
     .rsvp-button:hover {
       background-color: #f5f5dc;
       color: #1a2e1a;
     }
 
+    /* Footer */
     footer {
       margin-top: 50px;
       padding: 20px;
@@ -77,12 +77,12 @@
       color: #f5f5dc;
     }
 
+    /* Language Toggle */
     .language-toggle {
       position: absolute;
       top: 20px;
       right: 20px;
     }
-
     .language-toggle button {
       background: none;
       border: 1px solid #d4af37;
@@ -91,10 +91,15 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
     .language-toggle button:hover {
       background: #d4af37;
       color: #1a2e1a;
+    }
+
+    /* Countdown Timer */
+    #countdown-timer {
+      font-size: 24px;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -113,6 +118,30 @@
       <p id="header-date">Join us on <strong>August 31, 2025</strong> as we celebrate our love.</p>
     </header>
 
+    <!-- Countdown Section -->
+    <div class="section">
+      <h2>Countdown to the Big Day</h2>
+      <div id="countdown-timer">Loading...</div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="section">
+      <h2>Location & Directions</h2>
+      <p>Here’s where we’ll tie the knot. We look forward to seeing you!</p>
+      <!-- Replace the 'src' with your venue's Google Maps embed URL -->
+      <div style="max-width: 600px; margin: 0 auto;">
+        <iframe
+          width="600"
+          height="450"
+          style="border: 0"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=[YOUR_GOOGLE_MAPS_EMBED_URL]">
+        </iframe>
+      </div>
+    </div>
+
     <!-- Venue Gallery Section -->
     <div class="section">
       <h2 id="venue-title">Our Venue</h2>
@@ -130,7 +159,7 @@
       <ul id="details-list" style="list-style: none; padding: 0;">
         <li>📍 Location: [Insert Venue Name & Address]</li>
         <li>🕒 Time: [Insert Time]</li>
-        <li>👗 Dress Code: [Insert Dress Code]</li>
+        <li>👗 Dress Code: <a href='https://www.pinterest.com/your-moodboard-link' target='_blank'>See Moodboard</a></li>
       </ul>
     </div>
 
@@ -138,7 +167,8 @@
     <div class="section">
       <h2 id="rsvp-title">RSVP</h2>
       <p id="rsvp-description">Please let us know if you can attend by filling out the form below.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScZuPyMe34rTIaw_Up221P4vqmRCeG5KfTTNKeqN6JDvLqRkQ/viewform?usp=header" class="rsvp-button" id="rsvp-button">Fill in Invite</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScZuPyMe34rTIaw_Up221P4vqmRCeG5KfTTNKeqN6JDvLqRkQ/viewform?usp=header"
+         class="rsvp-button" id="rsvp-button">Fill in Invite</a>
     </div>
   </div>
 
@@ -160,7 +190,7 @@
         detailsList: [
           "📍 Location: [Insert Venue Name & Address]",
           "🕒 Time: [Insert Time]",
-          "👗 Dress Code: <a href='https://uk.pinterest.com/nnnow/summer-garden-party-mood-board/' target='_blank'>See Moodboard</a>",
+          "👗 Dress Code: <a href='https://www.pinterest.com/your-moodboard-link' target='_blank'>See Moodboard</a>",
         ],
         rsvpTitle: "RSVP",
         rsvpDescription: "Please let us know if you can attend by filling out the form below.",
@@ -178,16 +208,16 @@
         detailsList: [
           "📍 Място: [Въведете име и адрес на мястото]",
           "🕒 Час: [Въведете час]",
-          "👗 Дрескод: <a href='https://uk.pinterest.com/nnnow/summer-garden-party-mood-board/' target='_blank'>Вижте вдъхновения</a>",
+          "👗 Дрескод: <a href='https://www.pinterest.com/your-moodboard-link' target='_blank'>Вижте вдъхновения</a>",
         ],
         rsvpTitle: "Потвърждение",
         rsvpDescription: "Моля, уведомете ни, ако можете да присъствате, като попълните формата по-долу.",
         rsvpButton: "Попълни покана",
-        rsvpLink: "https://docs.google.com/forms/d/e/1FAIpQLSdrdLt2-_3Z3FCY0AhPq9C_Z2Js0YecWPGyZPCV6gGQ4Ya_RA/viewform?usp=header",
+        rsvpLink: "https://docs.google.com/forms/d/e/1FAIpQLSdF8qgK5XYZbg5RmgFJq8a5nGBX4q/viewform?usp=header", // Replace with your Bulgarian RSVP form link
         footerText: "Създадено с любов от Александър & Ралица",
       },
     };
-  
+
     // Function to toggle language
     function toggleLanguage(lang) {
       const elements = content[lang];
@@ -204,9 +234,40 @@
       document.getElementById("rsvp-button").href = elements.rsvpLink; // Update RSVP link
       document.getElementById("footer-text").innerText = elements.footerText;
     }
-  
+
+    // *** Countdown Timer Script ***
+    function startCountdown() {
+      // Target wedding date & time (August 31, 2025, at midnight)
+      const weddingDate = new Date("August 31, 2025 00:00:00").getTime();
+
+      // Update countdown every second
+      const x = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        // If the countdown is finished
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown-timer").innerHTML = "The big day has arrived!";
+          return;
+        }
+
+        // Time calculations
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result
+        document.getElementById("countdown-timer").innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      }, 1000);
+    }
+
     // Set default language to English
-    toggleLanguage("bg");
-  </script>  
+    toggleLanguage("en");
+    // Start the countdown
+    startCountdown();
+  </script>
 </body>
 </html>
