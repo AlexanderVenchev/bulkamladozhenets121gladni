@@ -8,8 +8,8 @@
     /* General Styles */
     body {
       font-family: 'Georgia', serif;
-      background-color: #1a2e1a; /* Dark green */
-      color: #f5f5dc; /* Cream */
+      background: repeating-linear-gradient(45deg, #c1c494, #c1c494 10%, #437742 10%, #437742 20%, #253122 20%, #253122 30%, #5d171f 30%, #5d171f 40%);
+      color: #f5f5dc;
       margin: 0;
       padding: 0;
       text-align: center;
@@ -36,14 +36,30 @@
 
     .section {
       margin: 40px 0;
+      padding: 20px;
+      border-radius: 10px;
     }
 
-    /* Venue Gallery */
+    header {
+      background-color: #c1c494;
+      padding: 40px;
+      border-radius: 10px;
+    }
+
+    .countdown {
+      background-color: #437742;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
     .venue-gallery {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 10px;
+      background-color: #253122;
+      padding: 20px;
+      border-radius: 10px;
     }
     .venue-gallery img {
       width: 100%;
@@ -54,7 +70,12 @@
       object-fit: cover;
     }
 
-    /* RSVP button */
+    .rsvp-section {
+      background-color: #253122;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
     .rsvp-button {
       display: inline-block;
       background-color: #d4af37;
@@ -69,15 +90,13 @@
       color: #1a2e1a;
     }
 
-    /* Footer */
     footer {
-      margin-top: 50px;
-      padding: 20px;
-      background-color: #0f1a0f; /* Darker green */
+      background-color: #5d171f;
       color: #f5f5dc;
+      padding: 20px;
+      border-radius: 10px;
     }
 
-    /* Language Toggle */
     .language-toggle {
       position: absolute;
       top: 20px;
@@ -96,7 +115,6 @@
       color: #1a2e1a;
     }
 
-    /* Countdown Timer */
     #countdown-timer {
       font-size: 24px;
       margin-top: 10px;
