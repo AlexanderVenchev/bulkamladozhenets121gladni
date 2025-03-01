@@ -206,13 +206,14 @@
       <!-- Replace the src below with a Google Maps embed link -->
       <div style="max-width: 600px; margin: 0 auto;">
         <iframe
+          id="mapembed"
           width="600"
           height="450"
           style="border: 0"
           loading="lazy"
           allowfullscreen
           referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.4449800014854!2d23.3675753!3d42.6519249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa869b6fa025c5%3A0xf208ee42b152e139!2z0KDQtdC30LjQtNC10L3RhtC40Y8g0KLQtdGA0LA!5e0!3m2!1sbg!2sbg!4v1740838592930!5m2!1sbg!2sbg">
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.4449800014854!2d23.3675753!3d42.6519249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa869b6fa025c5%3A0xf208ee42b152e139!2zVGVycmEgUmVzaWRlbmNlIC8g0KDQtdC30LjQtNC10L3RhtC40Y8g0KLQtdGA0LA!5e0!3m2!1sen!2sus!4v1740839166081!5m2!1sen!2sus">
         </iframe>
       </div>
     </div>
@@ -246,6 +247,7 @@
         locationTitle: "Location & Directions",
         locationDescription: "Here’s where we’ll tie the knot. We look forward to seeing you!",
         footerText: "Made with love by Aleksandar & Ralitsa",
+        mapembed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.4449800014854!2d23.3675753!3d42.6519249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa869b6fa025c5%3A0xf208ee42b152e139!2zVGVycmEgUmVzaWRlbmNlIC8g0KDQtdC30LjQtNC10L3RhtC40Y8g0KLQtdGA0LA!5e0!3m2!1sen!2sus!4v1740839166081!5m2!1sen!2sus",
       },
       bg: {
         headerTitle: "Александър & Ралица",
@@ -267,6 +269,7 @@
         locationTitle: "Място и упътвания",
         locationDescription: "Тук ще се вречем един на друг. Очакваме ви с нетърпение!",
         footerText: "Създадено с любов от Александър & Ралица",
+        mapembed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.4449800014854!2d23.3675753!3d42.6519249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa869b6fa025c5%3A0xf208ee42b152e139!2z0KDQtdC30LjQtNC10L3RhtC40Y8g0KLQtdGA0LA!5e0!3m2!1sbg!2sbg!4v1740838592930!5m2!1sbg!2sbg",
       },
     };
 
@@ -297,6 +300,7 @@
       document.getElementById("location-description").innerText = elements.locationDescription;
       // Footer
       document.getElementById("footer-text").innerText = elements.footerText;
+      document.getElementById("mapembed").src = elements.mapembed;
     }
 
     // *** Countdown Timer Script ***
