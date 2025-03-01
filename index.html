@@ -8,11 +8,11 @@
     /* General Styles */
     body {
       font-family: 'Georgia', serif;
-      background: repeating-linear-gradient(45deg, #c1c494, #c1c494 10%, #437742 10%, #437742 20%, #253122 20%, #253122 30%, #5d171f 30%, #5d171f 40%);
       color: #f5f5dc;
       margin: 0;
       padding: 0;
       text-align: center;
+      overflow-x: hidden;
     }
 
     h1, h2 {
@@ -44,6 +44,7 @@
       background-color: #c1c494;
       padding: 40px;
       border-radius: 10px;
+      position: relative;
     }
 
     .countdown {
@@ -53,10 +54,6 @@
     }
 
     .venue-gallery {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 10px;
       background-color: #253122;
       padding: 20px;
       border-radius: 10px;
@@ -71,7 +68,7 @@
     }
 
     .rsvp-section {
-      background-color: #253122;
+      background-color: #5d171f;
       padding: 20px;
       border-radius: 10px;
     }
@@ -88,6 +85,12 @@
     .rsvp-button:hover {
       background-color: #f5f5dc;
       color: #1a2e1a;
+    }
+
+    .location-section {
+      background-color: #253122;
+      padding: 20px;
+      border-radius: 10px;
     }
 
     footer {
@@ -119,9 +122,36 @@
       font-size: 24px;
       margin-top: 10px;
     }
+
+    /* Doves Animation */
+    .dove {
+      position: absolute;
+      width: 80px;
+      top: -100px;
+      animation: descend 6s linear infinite;
+    }
+
+    .dove.left {
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .dove.right {
+      right: 10%;
+      animation-delay: 1s;
+    }
+
+    @keyframes descend {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(15deg); opacity: 0; }
+    }
   </style>
 </head>
 <body>
+  <!-- Doves Animation -->
+  <img src="dove.png" class="dove left" alt="Dove" />
+  <img src="dove.png" class="dove right" alt="Dove" />
+
   <!-- Language Toggle -->
   <div class="language-toggle">
     <button onclick="toggleLanguage('en')">EN</button>
@@ -129,186 +159,33 @@
   </div>
 
   <div class="container">
-    <!-- Header Section -->
     <header class="section">
       <h1 id="header-title">Aleksandar & Ralitsa</h1>
       <h2 id="header-subtitle">We're Getting Married!</h2>
       <p id="header-date">Join us on <strong>August 31, 2025</strong> as we celebrate our love.</p>
     </header>
 
-    <!-- Countdown Section -->
-    <div class="section">
+    <div class="section countdown">
       <h2 id="countdown-title">Countdown to the Big Day</h2>
       <div id="countdown-timer">Loading...</div>
     </div>
 
-    <!-- Venue Gallery Section -->
-    <div class="section">
+    <div class="venue-gallery">
       <h2 id="venue-title">Our Venue</h2>
-      <div class="venue-gallery">
-        <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/img-8144-3_orig.jpg" alt="Venue Image 1" />
-        <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/terraresidence-113_1_orig.jpg" alt="Venue Image 2" />
-        <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/dsc00953.jpg" alt="Venue Image 3" />
-      </div>
+      <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/img-8144-3_orig.jpg" alt="Venue Image 1" />
+      <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/terraresidence-113_1_orig.jpg" alt="Venue Image 2" />
+      <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/dsc00953.jpg" alt="Venue Image 3" />
     </div>
 
-    <!-- Extra Information Section -->
-    <div class="section">
-      <h2 id="details-title">Details</h2>
-      <p id="details-description">We can't wait to celebrate with you! Here are a few things to know:</p>
-      <ul id="details-list" style="list-style: none; padding: 0;">
-        <li>📍 Location: Terra Residence</li>
-        <li>🕒 Time: [Insert Time]</li>
-        <li>👗 Dress Code: <a href='https://www.pinterest.com/your-moodboard-link' target='_blank'>See Moodboard</a></li>
-      </ul>
-    </div>
-
-    <!-- RSVP Section -->
-    <div class="section">
+    <div class="rsvp-section">
       <h2 id="rsvp-title">RSVP</h2>
       <p id="rsvp-description">Please let us know if you can attend by filling out the form below.</p>
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLScZuPyMe34rTIaw_Up221P4vqmRCeG5KfTTNKeqN6JDvLqRkQ/viewform?usp=header"
-        class="rsvp-button"
-        id="rsvp-button"
-      >
-        Fill in Invite
-      </a>
-    </div>
-
-    <!-- Location Section (moved to bottom) -->
-    <div class="section" id="location-section">
-      <h2 id="location-title">Location & Directions</h2>
-      <p id="location-description">Here’s where we’ll tie the knot. We look forward to seeing you!</p>
-      <!-- Replace the src below with a Google Maps embed link -->
-      <div style="max-width: 600px; margin: 0 auto;">
-        <iframe
-          width="600"
-          height="450"
-          style="border: 0"
-          loading="lazy"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.4449800014854!2d23.3675753!3d42.6519249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa869b6fa025c5%3A0xf208ee42b152e139!2z0KDQtdC30LjQtNC10L3RhtC40Y8g0KLQtdGA0LA!5e0!3m2!1sbg!2sbg!4v1740838592930!5m2!1sbg!2sbg">
-        </iframe>
-      </div>
+      <a href="#" class="rsvp-button" id="rsvp-button">Fill in Invite</a>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p id="footer-text">Made with love by Aleksandar & Ralitsa</p>
   </footer>
-
-  <script>
-    // Language content
-    const content = {
-      en: {
-        headerTitle: "Aleksandar & Ralitsa",
-        headerSubtitle: "We're Getting Married!",
-        headerDate: "Join us on <strong>August 31, 2025</strong> as we celebrate our love.",
-        countdownTitle: "Countdown to the Big Day",
-        venueTitle: "Our Venue",
-        detailsTitle: "Details",
-        detailsDescription: "We can't wait to celebrate with you! Here are a few things to know:",
-        detailsList: [
-          "📍 Location: Terra Residence",
-          "🕒 Time: [Insert Time]",
-          "👗 Dress Code: <a href='https://www.pinterest.com/your-moodboard-link' target='_blank'>See Moodboard</a>",
-        ],
-        rsvpTitle: "RSVP",
-        rsvpDescription: "Please let us know if you can attend by filling out the form below.",
-        rsvpButton: "Fill in Invite",
-        rsvpLink: "https://docs.google.com/forms/d/e/1FAIpQLScZuPyMe34rTIaw_Up221P4vqmRCeG5KfTTNKeqN6JDvLqRkQ/viewform?usp=header",
-        locationTitle: "Location & Directions",
-        locationDescription: "Here’s where we’ll tie the knot. We look forward to seeing you!",
-        footerText: "Made with love by Aleksandar & Ralitsa",
-      },
-      bg: {
-        headerTitle: "Александър & Ралица",
-        headerSubtitle: "Женим се!",
-        headerDate: "Присъединете се към нас на <strong>31 август 2025</strong>, за да отпразнуваме любовта си.",
-        countdownTitle: "Обратно броене до големия ден",
-        venueTitle: "Мястото на събитието",
-        detailsTitle: "Детайли",
-        detailsDescription: "Нямаме търпение да празнуваме с вас! Ето няколко неща, които трябва да знаете:",
-        detailsList: [
-          "📍 Място: Terra Residence",
-          "🕒 Час: [Въведете час]",
-          "👗 Дрескод: <a href='https://www.pinterest.com/your-moodboard-link' target='_blank'>Вижте вдъхновения</a>",
-        ],
-        rsvpTitle: "Потвърждение",
-        rsvpDescription: "Моля, уведомете ни, ако можете да присъствате, като попълните формата по-долу.",
-        rsvpButton: "Попълни покана",
-        rsvpLink: "https://docs.google.com/forms/d/e/1FAIpQLSdrdLt2-_3Z3FCY0AhPq9C_Z2Js0YecWPGyZPCV6gGQ4Ya_RA/viewform?usp=header",
-        locationTitle: "Място и упътвания",
-        locationDescription: "Тук ще се вречем един на друг. Очакваме ви с нетърпение!",
-        footerText: "Създадено с любов от Александър & Ралица",
-      },
-    };
-
-    // Function to toggle language
-    function toggleLanguage(lang) {
-      const elements = content[lang];
-      // Header
-      document.getElementById("header-title").innerText = elements.headerTitle;
-      document.getElementById("header-subtitle").innerText = elements.headerSubtitle;
-      document.getElementById("header-date").innerHTML = elements.headerDate;
-      // Countdown
-      document.getElementById("countdown-title").innerText = elements.countdownTitle;
-      // Venue
-      document.getElementById("venue-title").innerText = elements.venueTitle;
-      // Details
-      document.getElementById("details-title").innerText = elements.detailsTitle;
-      document.getElementById("details-description").innerText = elements.detailsDescription;
-      document.getElementById("details-list").innerHTML = elements.detailsList
-        .map((item) => `<li>${item}</li>`)
-        .join("");
-      // RSVP
-      document.getElementById("rsvp-title").innerText = elements.rsvpTitle;
-      document.getElementById("rsvp-description").innerText = elements.rsvpDescription;
-      document.getElementById("rsvp-button").innerText = elements.rsvpButton;
-      document.getElementById("rsvp-button").href = elements.rsvpLink;
-      // Location
-      document.getElementById("location-title").innerText = elements.locationTitle;
-      document.getElementById("location-description").innerText = elements.locationDescription;
-      // Footer
-      document.getElementById("footer-text").innerText = elements.footerText;
-    }
-
-    // *** Countdown Timer Script ***
-    function startCountdown() {
-      // Target wedding date & time (August 31, 2025, at midnight)
-      const weddingDate = new Date("August 31, 2025 00:00:00").getTime();
-
-      // Update countdown every second
-      const x = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
-
-        // If the countdown is finished
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("countdown-timer").innerHTML = "The big day has arrived!";
-          return;
-        }
-
-        // Time calculations
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result
-        document.getElementById("countdown-timer").innerHTML =
-          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-      }, 1000);
-    }
-
-    // Set default language to BG
-    toggleLanguage("bg");
-    // Start the countdown
-    startCountdown();
-  </script>
 </body>
 </html>
