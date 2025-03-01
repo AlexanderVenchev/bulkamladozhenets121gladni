@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aleksandar & Ralitsa's Wedding</title>
   <style>
     /* General Styles */
@@ -120,35 +120,17 @@
 
     <!-- Countdown Section -->
     <div class="section">
-      <h2>Countdown to the Big Day</h2>
+      <h2 id="countdown-title">Countdown to the Big Day</h2>
       <div id="countdown-timer">Loading...</div>
-    </div>
-
-    <!-- Map Section -->
-    <div class="section">
-      <h2>Location & Directions</h2>
-      <p>Here’s where we’ll tie the knot. We look forward to seeing you!</p>
-      <!-- Replace the 'src' with your venue's Google Maps embed URL -->
-      <div style="max-width: 600px; margin: 0 auto;">
-        <iframe
-          width="600"
-          height="450"
-          style="border: 0"
-          loading="lazy"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=[YOUR_GOOGLE_MAPS_EMBED_URL]">
-        </iframe>
-      </div>
     </div>
 
     <!-- Venue Gallery Section -->
     <div class="section">
       <h2 id="venue-title">Our Venue</h2>
       <div class="venue-gallery">
-        <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/img-8144-3_orig.jpg" alt="Venue Image 1">
-        <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/terraresidence-113_1_orig.jpg" alt="Venue Image 2">
-        <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/dsc00953.jpg" alt="Venue Image 3">
+        <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/img-8144-3_orig.jpg" alt="Venue Image 1" />
+        <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/terraresidence-113_1_orig.jpg" alt="Venue Image 2" />
+        <img src="https://www.terraresidence.com/uploads/1/1/0/9/11096597/dsc00953.jpg" alt="Venue Image 3" />
       </div>
     </div>
 
@@ -157,7 +139,7 @@
       <h2 id="details-title">Details</h2>
       <p id="details-description">We can't wait to celebrate with you! Here are a few things to know:</p>
       <ul id="details-list" style="list-style: none; padding: 0;">
-        <li>📍 Location: [Insert Venue Name & Address]</li>
+        <li>📍 Location: Terra Residence</li>
         <li>🕒 Time: [Insert Time]</li>
         <li>👗 Dress Code: <a href='https://www.pinterest.com/your-moodboard-link' target='_blank'>See Moodboard</a></li>
       </ul>
@@ -167,8 +149,31 @@
     <div class="section">
       <h2 id="rsvp-title">RSVP</h2>
       <p id="rsvp-description">Please let us know if you can attend by filling out the form below.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScZuPyMe34rTIaw_Up221P4vqmRCeG5KfTTNKeqN6JDvLqRkQ/viewform?usp=header"
-         class="rsvp-button" id="rsvp-button">Fill in Invite</a>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLScZuPyMe34rTIaw_Up221P4vqmRCeG5KfTTNKeqN6JDvLqRkQ/viewform?usp=header"
+        class="rsvp-button"
+        id="rsvp-button"
+      >
+        Fill in Invite
+      </a>
+    </div>
+
+    <!-- Location Section (moved to bottom) -->
+    <div class="section" id="location-section">
+      <h2 id="location-title">Location & Directions</h2>
+      <p id="location-description">Here’s where we’ll tie the knot. We look forward to seeing you!</p>
+      <!-- Terra Residence, using short link. For a correct embed, use a Google Maps embed URL. -->
+      <div style="max-width: 600px; margin: 0 auto;">
+        <iframe
+          width="600"
+          height="450"
+          style="border: 0"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://g.co/kgs/awy7H7L"
+        ></iframe>
+      </div>
     </div>
   </div>
 
@@ -184,11 +189,12 @@
         headerTitle: "Aleksandar & Ralitsa",
         headerSubtitle: "We're Getting Married!",
         headerDate: "Join us on <strong>August 31, 2025</strong> as we celebrate our love.",
+        countdownTitle: "Countdown to the Big Day",
         venueTitle: "Our Venue",
         detailsTitle: "Details",
         detailsDescription: "We can't wait to celebrate with you! Here are a few things to know:",
         detailsList: [
-          "📍 Location: [Insert Venue Name & Address]",
+          "📍 Location: Terra Residence",
           "🕒 Time: [Insert Time]",
           "👗 Dress Code: <a href='https://www.pinterest.com/your-moodboard-link' target='_blank'>See Moodboard</a>",
         ],
@@ -196,17 +202,20 @@
         rsvpDescription: "Please let us know if you can attend by filling out the form below.",
         rsvpButton: "Fill in Invite",
         rsvpLink: "https://docs.google.com/forms/d/e/1FAIpQLScZuPyMe34rTIaw_Up221P4vqmRCeG5KfTTNKeqN6JDvLqRkQ/viewform?usp=header",
+        locationTitle: "Location & Directions",
+        locationDescription: "Here’s where we’ll tie the knot. We look forward to seeing you!",
         footerText: "Made with love by Aleksandar & Ralitsa",
       },
       bg: {
         headerTitle: "Александър & Ралица",
         headerSubtitle: "Женим се!",
         headerDate: "Присъединете се към нас на <strong>31 август 2025</strong>, за да отпразнуваме любовта си.",
+        countdownTitle: "Обратно броене до големия ден",
         venueTitle: "Мястото на събитието",
         detailsTitle: "Детайли",
         detailsDescription: "Нямаме търпение да празнуваме с вас! Ето няколко неща, които трябва да знаете:",
         detailsList: [
-          "📍 Място: [Въведете име и адрес на мястото]",
+          "📍 Място: Terra Residence",
           "🕒 Час: [Въведете час]",
           "👗 Дрескод: <a href='https://www.pinterest.com/your-moodboard-link' target='_blank'>Вижте вдъхновения</a>",
         ],
@@ -214,6 +223,8 @@
         rsvpDescription: "Моля, уведомете ни, ако можете да присъствате, като попълните формата по-долу.",
         rsvpButton: "Попълни покана",
         rsvpLink: "https://docs.google.com/forms/d/e/1FAIpQLSdrdLt2-_3Z3FCY0AhPq9C_Z2Js0YecWPGyZPCV6gGQ4Ya_RA/viewform?usp=header",
+        locationTitle: "Място и упътвания",
+        locationDescription: "Тук ще се вречем един на друг. Очакваме ви с нетърпение!",
         footerText: "Създадено с любов от Александър & Ралица",
       },
     };
@@ -221,17 +232,29 @@
     // Function to toggle language
     function toggleLanguage(lang) {
       const elements = content[lang];
+      // Header
       document.getElementById("header-title").innerText = elements.headerTitle;
       document.getElementById("header-subtitle").innerText = elements.headerSubtitle;
       document.getElementById("header-date").innerHTML = elements.headerDate;
+      // Countdown
+      document.getElementById("countdown-title").innerText = elements.countdownTitle;
+      // Venue
       document.getElementById("venue-title").innerText = elements.venueTitle;
+      // Details
       document.getElementById("details-title").innerText = elements.detailsTitle;
       document.getElementById("details-description").innerText = elements.detailsDescription;
-      document.getElementById("details-list").innerHTML = elements.detailsList.map(item => `<li>${item}</li>`).join("");
+      document.getElementById("details-list").innerHTML = elements.detailsList
+        .map((item) => `<li>${item}</li>`)
+        .join("");
+      // RSVP
       document.getElementById("rsvp-title").innerText = elements.rsvpTitle;
       document.getElementById("rsvp-description").innerText = elements.rsvpDescription;
       document.getElementById("rsvp-button").innerText = elements.rsvpButton;
-      document.getElementById("rsvp-button").href = elements.rsvpLink; // Update RSVP link
+      document.getElementById("rsvp-button").href = elements.rsvpLink;
+      // Location
+      document.getElementById("location-title").innerText = elements.locationTitle;
+      document.getElementById("location-description").innerText = elements.locationDescription;
+      // Footer
       document.getElementById("footer-text").innerText = elements.footerText;
     }
 
